@@ -1,0 +1,20 @@
+<form [formGroup]="registro">
+    <span>Nombre y Apellido *</span>
+    <input class="form-control" type="text" formControlName="nombre" required>
+    <div *ngIf="enviado && campos.nombre.errors" class="is-invalid">
+        <div *ngIf="campos.nombre.errors.required">Campo obligatorio</div>
+    </div>
+    <span>Correo *</span>
+    <input class="form-control" type="text" formControlName="correo" required>
+    <div *ngIf="enviado && campos.correo.errors" class="is-invalid">
+        <div *ngIf="campos.correo.errors.required">Campo obligatorio</div>
+    </div>
+    <span>Telefono</span>
+    <input class="form-control" type="text" formControlName="telefono">
+    <span>Contraseña *</span>
+    <input class="form-control" type="password" formControlName="password" required>
+    <div *ngIf="enviado && campos.password.errors" class="is-invalid">
+        <div *ngIf="campos.password.errors.required">Campo obligatorio</div>
+    </div>
+</form><br>
+<button class="btn btn-primary"(click)="crearCuenta()" >Crear Cuenta</button>
